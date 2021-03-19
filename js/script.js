@@ -6,17 +6,17 @@
 
 //Chiedere all'utente il numero di km che vuole percorrere
 var chilometriDaPercorrere = prompt ("Quanti chilometri vuoi percorrere");
-// console.log(chilometriDaPercorrere );
-
 var chilometriDaPercorrereNumero = parseInt (chilometriDaPercorrere);
 console.log(chilometriDaPercorrereNumero);
 
 //Chiedere all'utente l'età del passeggero
 var etaPasseggero = prompt ("Quanti anni hai?");
-// console.log(etaPasseggero);
-
 var etaPasseggeroNumero = parseInt (etaPasseggero);
 console.log(etaPasseggeroNumero);
+
+if ( isNaN(chilometriDaPercorrereNumero + etaPasseggeroNumero ) ) {
+    alert('Quello che hai iserito non è un numero');
+}
 
 // prezzo biglietto al km 
 var prezzoPerKm = 0.21;
@@ -47,11 +47,13 @@ console.log(prezzOver);
 //al prezzo del biglietto va applicato uno sconto del 20% per i minorenni e del 40% per gli over 65.
 
 if (etaPasseggero > 65) {
-    alert ("il prezzo per i pensionati è " + prezzOver);
-}else if (etaPasseggero < 18 ) {
+    var prezzoFinaleOver = prezzOver;
+    alert("il prezzo per i pensionati è " + prezzoFinaleOver);
+
+} else if (etaPasseggero < 18 ) {
     alert ("il prezzo per i minorenni è " + prezzoMinorenni);
-}else {
-    alert("il prezzo per te è" + prezzoChilometri);
+}  else {
+    alert("il prezzo per te è " + prezzoChilometri);
 }
 
 
