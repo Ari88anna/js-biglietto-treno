@@ -46,16 +46,18 @@ console.log(prezzOver);
 
 //al prezzo del biglietto va applicato uno sconto del 20% per i minorenni e del 40% per gli over 65.
 
+var prezzoFinale = prezzoChilometri;
+
+
+
 if (etaPasseggero > 65) {
-    var prezzoFinaleOver = prezzOver;
-    alert("il prezzo per i pensionati è " + prezzoFinaleOver);
-
+    prezzoFinale = prezzOver;
 } else if (etaPasseggero < 18 ) {
-    alert ("il prezzo per i minorenni è " + prezzoMinorenni);
-}  else {
-    alert("il prezzo per te è " + prezzoChilometri);
-}
+    prezzoFinale = prezzoMinorenni;
+}  
 
+//output
+alert("il prezzo per te è: " + prezzoFinale.toFixed(2) + "€");
 
 
 
